@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad — Kairos Assist</title>
+<style>
+  :root {
+    --ink: #0d1117;
+    --paper: #f7f8fb;
+    --card: #ffffff;
+    --border: #e3e7f0;
+    --muted: #5b6472;
+    --blue: #2f6fed;
+    --blue-deep: #1a2f8f;
+    --violet: #7c3aed;
+    --accent-line: linear-gradient(90deg, #22d3ee, #2f6fed, #7c3aed);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+  }
+  .top-strip { height: 5px; background: var(--accent-line); }
+  header {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 28px;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue-deep);
+    background: #eef3ff;
+    border: 1px solid #d9e4ff;
+    padding: 6px 12px;
+    border-radius: 999px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--blue);
+    display: inline-block;
+  }
+  h1 {
+    font-size: 32px;
+    margin: 18px 0 6px;
+    letter-spacing: -0.01em;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 15px;
+    margin: 0;
+  }
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 30px;
+    margin-bottom: 20px;
+  }
+  .card.highlight {
+    border-color: #d9e4ff;
+    background: linear-gradient(180deg, #f5f8ff, #ffffff);
+  }
+  .card.warn {
+    border-color: #fde3c7;
+    background: linear-gradient(180deg, #fffaf3, #ffffff);
+  }
+  h2 {
+    font-size: 18px;
+    margin: 0 0 12px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  h2 .num {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--blue);
+    width: 24px;
+    height: 24px;
+    border-radius: 7px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transform: translateY(2px);
+  }
+  h3.sub {
+    font-size: 15px;
+    margin: 18px 0 8px;
+    color: var(--blue-deep);
+  }
+  p { margin: 0 0 12px; font-size: 15px; color: #232a35; }
+  p:last-child { margin-bottom: 0; }
+  ul { margin: 0 0 12px; padding-left: 20px; font-size: 15px; }
+  li { margin-bottom: 6px; }
+  strong { color: var(--blue-deep); }
+  .perm-grid {
+    display: grid;
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .perm {
+    display: flex;
+    gap: 14px;
+    padding: 14px 16px;
+    background: #f9fafc;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+  .perm .icon {
+    width: 34px; height: 34px;
+    border-radius: 9px;
+    background: #eef3ff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 17px;
+  }
+  .perm .txt strong { display: block; font-size: 14px; margin-bottom: 2px; }
+  .perm .txt span { font-size: 13.5px; color: var(--muted); }
+
+  .roles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .role-box {
+    background: #f9fafc;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .role-box .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--blue-deep);
+    background: #eef3ff;
+    padding: 3px 9px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+  }
+  .role-box p { font-size: 14px; margin-bottom: 0; }
+  @media (max-width: 540px) {
+    .roles-grid { grid-template-columns: 1fr; }
+  }
+
+  table.retention {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  table.retention th, table.retention td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  table.retention th {
+    color: var(--muted);
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+  }
+
+  .contact-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    background: var(--blue-deep);
+    background: linear-gradient(120deg, #1a2f8f, #3b1f8f);
+    color: #fff;
+    border-radius: 16px;
+    padding: 26px 28px;
+  }
+  .contact-box h3 { margin: 0 0 4px; font-size: 17px; }
+  .contact-box p { color: rgba(255,255,255,0.8); margin: 0; font-size: 14px; }
+  .contact-box a {
+    color: #fff;
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 10px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+  }
+  .disclaimer {
+    font-size: 12.5px;
+    color: var(--muted);
+    border-top: 1px dashed var(--border);
+    margin-top: 14px;
+    padding-top: 12px;
+    text-align: left;
+  }
+  @media (max-width: 540px) {
+    h1 { font-size: 26px; }
+    .card { padding: 22px 18px; }
+    .contact-box { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-strip"></div>
+
+<header>
+  <span class="eyebrow">Kairos Assist</span>
+  <h1>Política de Privacidad</h1>
+  <p class="subtitle">Última actualización: 7 de agosto de 2026</p>
+</header>
+
+<main>
+
+  <div class="card highlight">
+    <p>Kairos Assist ("la aplicación", "nosotros") es un sistema de control de asistencia escolar. Esta política explica qué información recopilamos, para qué la usamos, qué permisos del dispositivo solicitamos y por qué, cuánto tiempo conservamos los datos, y cómo puedes ejercer tus derechos sobre ellos.</p>
+    <p>Al usar Kairos Assist —ya sea como institución, profesor, padre de familia o estudiante— aceptas las prácticas descritas aquí.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">1</span> Información que recopilamos</h2>
+    <p>Dependiendo del rol del usuario dentro de la aplicación, recopilamos:</p>
+    <ul>
+      <li><strong>Datos de cuenta:</strong> nombre completo, correo electrónico y contraseña (cifrada) al registrarte como profesor, profesor independiente o padre de familia.</li>
+      <li><strong>Datos del estudiante:</strong> nombre, apellido, número de identificación/cédula, grado o clase, y fotografía de perfil (si se sube una).</li>
+      <li><strong>Registros de asistencia:</strong> fecha, hora y materia en la que un estudiante fue marcado presente.</li>
+      <li><strong>Excusas y justificantes:</strong> fotografías o documentos que un padre o estudiante sube para justificar una inasistencia. Estos documentos pueden contener <strong>información de salud</strong> (ver sección 5).</li>
+      <li><strong>Información institucional:</strong> nombre del colegio/instituto y código de acceso asociado, si el usuario pertenece a una institución.</li>
+      <li><strong>Datos técnicos básicos:</strong> identificador del dispositivo para notificaciones push, y registros de uso con fines de soporte técnico.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">2</span> Permisos del dispositivo que solicitamos</h2>
+    <p>Kairos Assist pide los siguientes permisos únicamente para las funciones específicas que los necesitan. Nunca se activan en segundo plano ni se usan para rastrear al usuario.</p>
+    <div class="perm-grid">
+      <div class="perm">
+        <div class="icon">📷</div>
+        <div class="txt">
+          <strong>Cámara</strong>
+          <span>Para escanear el código QR de un estudiante y registrar su asistencia, y para tomar una foto en el momento al justificar una inasistencia con una excusa médica u otro documento.</span>
+        </div>
+      </div>
+      <div class="perm">
+        <div class="icon">🖼️</div>
+        <div class="txt">
+          <strong>Galería / Fotos</strong>
+          <span>Para adjuntar una foto ya existente en el dispositivo (por ejemplo, una constancia médica) como respaldo de una excusa, en vez de tomarla en el momento.</span>
+        </div>
+      </div>
+      <div class="perm">
+        <div class="icon">🔔</div>
+        <div class="txt">
+          <strong>Notificaciones</strong>
+          <span>Para avisar a los padres de familia cuando su hijo es marcado ausente, y para recordatorios relacionados con la asistencia diaria.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card warn">
+    <h2><span class="num">3</span> Marco legal aplicable</h2>
+    <p>Honduras aún no cuenta con una ley integral de protección de datos personales. Existe una ley de 2013 (Ley de Protección de Datos Personales en Posesión de Sujetos Obligados) de alcance limitado a entidades del sector público, y un anteproyecto de ley más amplio impulsado por el Instituto de Acceso a la Información Pública (IAIP) que aún se encuentra en discusión en el Congreso Nacional. Mientras tanto, la protección de datos personales en Honduras se sustenta en la garantía constitucional de <strong>hábeas data</strong> (derecho de toda persona a conocer, actualizar y rectificar la información que existe sobre ella en bases de datos).</p>
+    <p>Kairos Assist aplica, como estándar propio, principios equivalentes a los de marcos de protección de datos más desarrollados (minimización de datos, limitación de la finalidad, seguridad y confidencialidad), y se compromete a actualizar esta política y sus prácticas internas conforme la legislación hondureña evolucione. Adicionalmente, como aplicación distribuida a través de Google Play, cumplimos con los requisitos de la <strong>Sección de Seguridad de Datos (Data Safety)</strong> y las políticas de programa para desarrolladores de Google Play.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">4</span> Para qué usamos esta información</h2>
+    <ul>
+      <li>Registrar y llevar el control de la asistencia de cada estudiante.</li>
+      <li>Generar reportes de asistencia para profesores e instituciones.</li>
+      <li>Notificar a los padres de familia sobre inasistencias de sus hijos.</li>
+      <li>Permitir que los padres consulten estadísticas, horarios y presenten excusas.</li>
+      <li>Verificar la identidad de los usuarios al iniciar sesión.</li>
+      <li>Brindar soporte técnico cuando el usuario lo solicita.</li>
+    </ul>
+    <p>No usamos esta información con fines publicitarios, no la vendemos a terceros, y no la utilizamos para elaborar perfiles de comportamiento de estudiantes ni para ningún tipo de segmentación publicitaria dirigida a menores.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">5</span> Datos sensibles: excusas médicas</h2>
+    <p>Cuando un padre o estudiante sube una constancia o justificante médico como parte de una excusa de inasistencia, esa información se trata como <strong>dato sensible de salud</strong>, con un nivel de protección más estricto que el resto de los datos de la aplicación:</p>
+    <ul>
+      <li>Solo el profesor de la clase correspondiente y el personal administrativo autorizado de la institución pueden ver estos documentos.</li>
+      <li>No se comparten con terceros bajo ninguna circunstancia, ni siquiera de forma anonimizada.</li>
+      <li>No se utilizan para ningún fin distinto a la verificación de la excusa presentada.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">6</span> Dónde se almacenan los datos y quién los procesa</h2>
+    <p>Los datos se almacenan de forma segura utilizando <strong>Supabase</strong> (base de datos y almacenamiento de archivos), con nuestro backend propio alojado en <strong>Render</strong>, y notificaciones push gestionadas a través de la infraestructura de <strong>Expo</strong>. Estos proveedores actúan como <strong>subencargados del tratamiento</strong>, procesando datos únicamente bajo nuestras instrucciones y con sus propias obligaciones contractuales de confidencialidad y seguridad.</p>
+    <p>El acceso a la información está restringido según el rol de cada usuario: un profesor solo ve a sus propios estudiantes, y un padre de familia solo ve la información de sus hijos vinculados.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">7</span> Con quién compartimos la información</h2>
+    <p>No compartimos, vendemos ni alquilamos datos personales a terceros con fines comerciales o publicitarios. La información solo es visible para:</p>
+    <ul>
+      <li>El profesor o institución responsable de la clase del estudiante.</li>
+      <li>El padre o tutor legal vinculado a ese estudiante.</li>
+      <li>Proveedores de infraestructura técnica (Supabase, Render, Expo) estrictamente para el funcionamiento del servicio, bajo sus propias obligaciones de confidencialidad, listados en la sección 6.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">8</span> Retención y eliminación de datos</h2>
+    <p>Conservamos la información solo mientras sea necesaria para los fines descritos en esta política, o mientras la cuenta y la vinculación institucional permanezcan activas:</p>
+    <table class="retention">
+      <tr><th>Tipo de dato</th><th>Retención</th></tr>
+      <tr><td>Registros de asistencia</td><td>Mientras el estudiante esté matriculado en la institución; disponibles para reportes históricos</td></tr>
+      <tr><td>Excusas médicas y adjuntos</td><td>Mismo período que los registros de asistencia asociados</td></tr>
+      <tr><td>Datos de cuenta (profesor/padre)</td><td>Mientras la cuenta permanezca activa</td></tr>
+    </table>
+    <p>Al solicitar la eliminación de una cuenta o de los datos de un estudiante (sección 9), procesamos la solicitud en un plazo razonable, salvo que exista una obligación legal o institucional de conservar cierta información por más tiempo (por ejemplo, registros académicos que la institución deba conservar según sus propias políticas).</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">9</span> Medidas de seguridad</h2>
+    <ul>
+      <li>Cifrado de datos en tránsito y en reposo a través de nuestro proveedor de infraestructura.</li>
+      <li>Control de acceso basado en roles: cada usuario solo accede a la información que le corresponde según su función.</li>
+      <li>Autenticación mediante tokens de sesión con expiración y renovación segura.</li>
+      <li>Restricciones a nivel de base de datos que impiden el acceso directo no autorizado a la información, incluso ante un fallo en la aplicación.</li>
+      <li>Monitoreo de accesos y limitación de solicitudes para prevenir abuso o intentos de acceso no autorizado.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">10</span> Datos de menores de edad</h2>
+    <p>Kairos Assist maneja información de estudiantes que en muchos casos son menores de edad. Esta información es cargada y gestionada por profesores, instituciones educativas y padres de familia — no directamente por los menores, quienes no interactúan con la aplicación para introducir sus propios datos.</p>
+
+    <h3 class="sub">Roles y responsabilidades</h3>
+    <div class="roles-grid">
+      <div class="role-box">
+        <span class="tag">Responsable del tratamiento</span>
+        <p>La institución educativa determina qué datos de sus estudiantes se registran y es responsable de contar con el consentimiento correspondiente de los padres o tutores, conforme a sus propias políticas de matrícula.</p>
+      </div>
+      <div class="role-box">
+        <span class="tag">Encargado del tratamiento</span>
+        <p>Kairos Assist procesa esos datos únicamente por instrucción de la institución, exclusivamente para fines de control de asistencia y comunicación con los padres — nunca para fines propios ajenos a ese servicio.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:14px;">Los datos de los estudiantes no se utilizan para publicidad, no se venden, no se comparten con fines comerciales, y no se emplean para elaborar perfiles distintos al seguimiento de asistencia escolar.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">11</span> Tus derechos (derechos ARCO)</h2>
+    <p>Puedes solicitar en cualquier momento, sobre tus datos o los de tu hijo/a:</p>
+    <ul>
+      <li><strong>Acceso:</strong> conocer qué información tenemos registrada.</li>
+      <li><strong>Rectificación:</strong> corregir información incorrecta o desactualizada.</li>
+      <li><strong>Cancelación:</strong> solicitar la eliminación de una cuenta y los datos asociados a ella.</li>
+      <li><strong>Oposición:</strong> oponerte a un uso específico de tus datos que consideres indebido.</li>
+    </ul>
+    <p>Para ejercer cualquiera de estos derechos, escríbenos al correo de contacto al final de esta página. Responderemos en un plazo razonable.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">12</span> Ley aplicable y jurisdicción</h2>
+    <p>Esta política se rige por las leyes de la República de Honduras. Cualquier disputa relacionada con el tratamiento de datos personales bajo esta política se resolverá conforme a la legislación hondureña aplicable, sin perjuicio de los derechos que puedan corresponder al usuario bajo otras normativas si accede a la aplicación desde otra jurisdicción.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">13</span> Cambios a esta política</h2>
+    <p>Podemos actualizar esta política ocasionalmente para reflejar cambios en la aplicación o en la normativa aplicable — incluyendo la eventual entrada en vigor de una ley integral de protección de datos en Honduras. La fecha de "última actualización" en la parte superior indica la versión vigente.</p>
+  </div>
+
+  <div class="contact-box">
+    <div>
+      <h3>¿Preguntas sobre tus datos?</h3>
+      <p>Escríbenos directamente y con gusto te ayudamos.</p>
+    </div>
+    <a href="mailto:stivrios415@gmail.com">stivrios415@gmail.com</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>Kairos Assist — Sistema de Control de Asistencia</p>
+  <div class="disclaimer">
+    Este documento es una plantilla informativa elaborada con base en los requisitos de la Sección de Seguridad de Datos de Google Play y prácticas estándar de la industria para aplicaciones educativas, y no constituye asesoría legal. Honduras aún no cuenta con una ley integral de protección de datos personales al momento de esta publicación; se recomienda encarecidamente la revisión de este documento por un profesional legal antes de su publicación oficial, y su actualización cuando el anteproyecto de ley del IAIP entre en vigor.
+  </div>
+</footer>
+
+</body>
+</html>
